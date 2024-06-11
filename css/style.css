@@ -1,0 +1,159 @@
+body{
+    background-color: pink;
+    padding: 0;
+    margin: 0;
+    font-family: Protest Strike;
+}
+
+body.yes{
+    background-color: pink;
+    background-image: url('../img/ok-dance-cat.gif');
+    background-size: cover;
+}
+
+body.yes .confirm{
+    display: none;
+    font-size: 42px;
+}
+
+body.yes .dialog{
+    display: block;
+    font-size: 42px;
+}
+
+.peachy-cat {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+}
+
+.peachy-cat img{
+    width: 100px;
+    height: 100px;
+}
+
+.heart-gif{
+    text-align: center;
+}
+
+.heart-gif img{
+    width: 700px;
+    height: 950px;
+}
+
+.tenor-gif-embed{
+    width: 250px;
+    height: 155px;
+}
+
+.heart{
+    animation: heartbeat 1s infinite;
+    background-color: red;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+
+.heart::before,
+.heart::after{
+    content: '';
+    background-color: red;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+}
+
+.heart::before{
+    top: -5px;
+    left: 0;
+}
+
+.heart::after{
+    top: 0;
+    left: 5px;    
+}
+
+@keyframes heartbeat {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.25);
+    }
+    40%{
+        transform: scale(1.5);
+    }    
+}
+
+.confirm{
+    min-width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(247, 140, 158);
+    box-shadow: 3px 3px 3px rgb(255, 112, 136);
+    border-radius: 5px;
+}
+
+.confirm__container{
+    padding: 10px;
+}
+
+.confirm__container .title{
+    color: #fff;
+    text-align: center;
+    font-size: 52px;
+    font-family: Protest Strike;
+}
+
+.confirm__actions{
+    display: flex;
+    column-gap: 10px;
+}
+
+.confirm__actions button{
+    width: 100%;
+    cursor: pointer;
+    font-size: 10px;
+    border: none;
+    padding: 5px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.confirm__actions .btn-yes{
+    background-color: aqua;
+    font-size: 22px;
+}
+
+.confirm__actions .btn-no{
+    position: relative;
+    font-size: 22px;
+    background-color: red;
+    transition: top 0.5s ease, right 0.5s ease; 
+}
+
+.dialog{
+    display: none;
+    min-width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f261ac;
+    box-shadow: 3px 3px 3px rgb(160, 69, 116);
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+.dialog__container{
+    padding: 15px 5px;
+}
+
+.dialog__container p{
+    color: #fff;
+    text-align: center;
+}
