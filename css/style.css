@@ -19,11 +19,12 @@ body.yes .confirm{
 body.yes .dialog{
     display: block;
     font-size: 42px;
+    text-align: center;
 }
 
 .peachy-cat {
     display: flex;
-    justify-content: center; /* Horizontally center the content */
+    justify-content: center; 
 }
 
 .peachy-cat img{
@@ -31,18 +32,27 @@ body.yes .dialog{
     height: 100px;
 }
 
-.heart-gif{
-    text-align: center;
+.heart-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    overflow: hidden;
 }
 
-.heart-gif img{
-    width: 700px;
-    height: 950px;
+.heart-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
 
 .tenor-gif-embed{
     width: 250px;
     height: 155px;
+    object-fit: contain;
 }
 
 .heart{
@@ -156,4 +166,50 @@ body.yes .dialog{
 .dialog__container p{
     color: #fff;
     text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+    .confirm__container .title{
+        text-align: center;
+    }
+
+    .heart-gif{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .heart-gif img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .confirm, .dialog {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .confirm__container .title {
+        font-size: 32px;
+    }
+
+    .confirm__actions .btn-yes,
+    .confirm__actions .btn-no {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .dialog__container p {
+        font-size: 18px;
+    }
+
+    .peachy-cat img {
+        width: 80px;
+        height: 80px;
+    }
 }

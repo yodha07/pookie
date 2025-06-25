@@ -23,20 +23,37 @@ document.addEventListener('DOMContentLoaded', function() {
         e.target.innerHTML = "YES";
     });
 
-    $btnNo.addEventListener('mouseover', (e) => {
-        const $target = e.target;
-        $target.style.transition = 'top 0.5s ease, right 0.5s ease'; 
-        $target.style.top = `${Math.random() * 350}px`;
-        $target.style.right = `${Math.random() * 350}px`;
+    $btnNo.addEventListener('touchstart', evadeNoButton);
 
+    $btnNo.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        evadeNoButton(e);
+    });
+
+    function evadeNoButton(e) {
+        const $target = e.target;
+        const maxY = Math.min(window.innerHeight - 100, 300);
+        const maxX = Math.min(window.innerWidth - 100, 300);
+
+        $target.style.transition = 'top 0.5s ease, right 0.5s ease'; 
+        $target.style.top = `${Math.random() * maxY}px`;
+        $target.style.right = `${Math.random() * maxX}px`;
+
+        counter += 1;
         if (counter >= 5){
             $target.innerHTML = "Hmmmmmm....";
         }if(counter >= 10){
             $target.innerHTML = "U sure>>??";
+        }if(counter >=15){
+            $target.innerHTML = "Come on now"
+        }if(counter >= 20){
+            $target.innerHTML = "Let kitty breathe!!"
         }
+    }
 
-        counter += 1;
-    });
+    $btnNo.addEventListener('mouseover', evadeNoButton);
+
+    $btnNo.addEventListener('click', evadeNoButton);
 
     function playAudio() {
         audio.play();
